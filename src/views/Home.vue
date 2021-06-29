@@ -40,6 +40,7 @@
           <input type="text" v-model="currentPhoto.url" />
         </p>
         <button v-on:click="updatePhoto(currentPhoto)">Update</button>
+        <button v-on:click="destroyPhoto(currentPhoto)">Destroy Photo</button>
         <button>Close</button>
       </form>
     </dialog>
@@ -95,6 +96,13 @@ export default {
         .catch((error) => {
           console.log("photos update error", error.response);
         });
+    },
+    destroyPhoto: function (photo) {
+      axios.delete("/photos/" + photo.id).then((response) => {
+        console.log("photos destroy", response);
+        var index = this.photos.indexOf(photo);
+        this.photos.splice(index, 1);
+      });
     },
   },
 };
