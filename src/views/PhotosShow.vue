@@ -5,6 +5,7 @@
     <p>Width: {{ photo.width }}</p>
     <p>Height: {{ photo.height }}</p>
     <router-link v-bind:to="`/photos/${photo.id}/edit`">Edit photo</router-link>
+    <button v-on:click="destroyPhoto(photo)">Destroy photo</button>
     <router-link to="/photos">Back to all photos</router-link>
   </div>
 </template>
@@ -23,6 +24,13 @@ export default {
       this.photo = response.data;
     });
   },
-  methods: {},
+  methods: {
+    destroyPhoto: function (photo) {
+      axios.delete("/photos/" + photo.id).then((response) => {
+        console.log("photos destroy", response);
+        this.$router.push("/photos");
+      });
+    },
+  },
 };
 </script>
