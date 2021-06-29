@@ -6,6 +6,8 @@
       <router-link to="/about">About</router-link>
       |
       <router-link to="/photos">All photos</router-link>
+      |
+      <router-link to="/photos/new">New photo</router-link>
     </div>
     <router-view />
   </div>
