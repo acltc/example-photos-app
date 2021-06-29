@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import PhotosIndex from "../views/PhotosIndex.vue";
 import PhotosNew from "../views/PhotosNew.vue";
 import PhotosShow from "../views/PhotosShow.vue";
+import PhotosEdit from "../views/PhotosEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,7 @@ const routes = [
   { path: "/photos", name: "photos-index", component: PhotosIndex },
   { path: "/photos/new", name: "photos-new", component: PhotosNew },
   { path: "/photos/:id", name: "photos-show", component: PhotosShow },
+  { path: "/photos/:id/edit", name: "photos-edit", component: PhotosEdit },
 ];
 
 const router = new VueRouter({

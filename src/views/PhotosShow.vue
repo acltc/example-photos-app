@@ -4,6 +4,7 @@
     <img v-bind:src="photo.url" v-bind:alt="photo.name" />
     <p>Width: {{ photo.width }}</p>
     <p>Height: {{ photo.height }}</p>
+    <router-link v-bind:to="`/photos/${photo.id}/edit`">Edit photo</router-link>
     <router-link to="/photos">Back to all photos</router-link>
   </div>
 </template>
